@@ -7,6 +7,9 @@ public class NthFactorial {
             return 1;
         else
             return n*factorial(n-1);
+        
+        //above all thing can do in single line by 'Ternary operator'
+        //return (n<=1)?1:n*factorial(n-1);
     }
 
     public static void main(String[] args) {
