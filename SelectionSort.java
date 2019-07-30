@@ -8,17 +8,17 @@ public class SelectionSort {
 	
 	for (int i = 0; i < a.length - 1; i++)  
     {  
-        int index = i;  
+        int min_idx = i;  
         
         for (int j = i + 1; j < a.length; j++){  
             
-        	if (a[j] < a[index]){  
-                index = j;//lowest index  
+        	if (a[j] < a[min_idx]){  
+                min_idx = j; 
             }  
         	
         }  
-        int temp = a[index];   
-        a[index] = a[i];  
+        int temp = a[min_idx];   
+        a[min_idx] = a[i];  
         a[i] = temp; 
     }  
 
