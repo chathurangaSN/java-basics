@@ -1,3 +1,5 @@
+package algorithms;
+
 public class NumberReverse {
 
     public int reverseNumber(int number){
