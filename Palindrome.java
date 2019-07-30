@@ -22,7 +22,7 @@ public class Palindrome {
 		word = word.toLowerCase();
 		int count = word.length() - 1;
 
-		for (int i = 0; i <= word.length()-1; i++) {
+		for (int i = 0; i <=count; i++) {
 			if (word.charAt(i) == word.charAt(count)) {
 				count--;
 				continue;
