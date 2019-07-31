@@ -17,11 +17,23 @@ public class FindDuplicateCharactersInAString {
                     dupMap.put(ch, 1);
                 }
             }
-            Set<Character> keys = dupMap.keySet();
-            for(Character ch:keys){
-                if(dupMap.get(ch) > 1){
+            
+            // No 01: Iterating over Map.entrySet() using For-Each loop :
+            for (Map.Entry<Character,Integer> entry : dupMap.entrySet())
+            if(entry.getValue() > 1)
+                System.out.println(entry.getKey() + "---->\t" + entry.getValue());
+                
+            // No 02: Iterating over Map.keySet()  using For-Each loop :
+            for(Character ch:dupMap.keySet()){
+                if(dupMap.get(ch) > 1)
                     System.out.println(ch+"--->"+dupMap.get(ch));
-                }
+                    
+            // No 03: Iterating using iterators over Map.Entry<K, V>
+                // ------code here-----------
+            // No 04: Using forEach(action) method
+                // ------code here-----------
+            // No 05: Iterating over keys and searching for values (inefficient)
+                // ------code here-----------
             }
         }
 
