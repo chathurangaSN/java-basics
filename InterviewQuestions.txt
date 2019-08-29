@@ -35,5 +35,22 @@ public static ArrayList<Integer> rmDups(ArrayList<Integer> arr){
         return arr;
 
     }
+  
+ #Find the missing number from 1-10 in a single pass
+ public class MissingNumber{
+   public static void main(String[] args){
+    int[] ar = {1,2,3,4,5,7,8,9,10};
+    System.out.println(missingNum(ar)); 	
+   }
+
+   static int missingNum(int[] arr){
+    int n = arr.length+1;
+    int total = (n*(n+1))/2;
+    for(int i = 0;i<n-1;i++){
+     total -= arr[i];
+    }
+    return total;
+   }
+}
 
 
