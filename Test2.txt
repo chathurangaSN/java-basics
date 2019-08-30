@@ -1,0 +1,63 @@
+package algorithms;
+import java.util.*;
+
+
+public class Test2{
+    public static void main(String[] args){
+        int[] ar = {1,2,3,4,5,7,8,9,10};
+//        System.out.println(missingElement(ar,10));
+//        System.out.println(secondLargest(ar));
+        ArrayList<Integer> alist = new ArrayList<>();
+        alist.add(1);
+        alist.add(1);
+        alist.add(1);
+        System.out.println(removeDupsInArrayList(alist));
+
+    }
+
+    static int missingElement(int[] arr,int n){
+        int total = (n*(n+1))/2;
+        for(int i=0;i<n-1;i++){//I missed n-1 here.There should be so.Because now there is 0-8 in array.
+            total -= arr[i];
+        }
+        return total;
+    }
+
+    static int secondLargest(int[] arr){
+        int first=0;
+        int second = 0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>first){
+                second = first;
+                first = arr[i];
+            }else if(arr[i]>second && arr[i]!=first){
+                second = arr[i];
+            }
+        }
+        return second;
+    }
+
+    static ArrayList<Integer> removeDupsInArrayList(ArrayList<Integer> arr){
+        Set<Integer> arrset = new LinkedHashSet<>();
+        arrset.addAll(arr);
+        arr.clear();
+        arr.addAll(arrset);
+        return arr;
+    }
+
+    static void numOfOccurence(List<Character> l){
+        Map<Character,Integer> occ = new HashMap<>();
+        for(int i=0;i<l.size();i++){
+            int count = occ.get(l.get(i))+1;
+            if(l.get(i)!= null){
+                occ.put(l.get(i).charValue(),count);
+            }else{
+                occ.put(l.get(i),count);
+            }
+        }
+
+        for(int i:l){
+            System.out.println(i+"->"+occ.get(i));
+        }
+    }
+}
