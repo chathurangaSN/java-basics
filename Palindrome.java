@@ -17,9 +17,21 @@ public class Palindrome {
 		}
 	}
 
-	static Boolean isPalindrome(String word) {
-		
-		word = word.toLowerCase();
+	#Method1
+	public boolean isPalindrome(String s){
+		String reverse = "";
+		for(int i =s.length()-1;i>=0;i--){
+			reverse += s.charAt(i);
+		}
+		if(s.equals(reverse)){
+			return true;
+		}
+		return false;
+	}
+	
+	#Method2
+	static boolean isPalindrome(String word) {
+	
 		int count = word.length() - 1;
 
 		for (int i = 0; i <=count; i++) {
@@ -33,5 +45,7 @@ public class Palindrome {
 		return true;
 
 	}
+	
+	
 
 }
